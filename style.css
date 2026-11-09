@@ -1074,3 +1074,21 @@ h2 em, .hero h1 em { font-style: normal; color: var(--accent); }
 .site-footer .brand-logo { height: 96px; }
 :root[data-theme="dark"] main img.brand-logo, :root[data-theme="dark"] img.brand-logo { filter: none; }
 @media (max-width: 640px) { .brand-logo { height: calc(var(--header-h) - 12px); } }
+
+/* Foto produk HD: tajam di layar retina */
+.pcard-img img, .model-photo img { image-rendering: auto; }
+
+/* Portofolio */
+.pf-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.pf-grid-3 { grid-template-columns: repeat(3, 1fr); }
+.pf-card { overflow: hidden; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; transition: transform .2s ease, box-shadow .2s ease; }
+.pf-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.pf-img { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: var(--bg-alt); }
+.pf-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
+.pf-card:hover .pf-img img { transform: scale(1.04); }
+.pf-tag { position: absolute; left: 14px; top: 14px; padding: 5px 12px; border-radius: 999px; background: var(--gold); color: #1b2a38; font-size: 11px; font-weight: 800; letter-spacing: .6px; }
+.pf-body { padding: 20px 22px 24px; }
+.pf-body h3 { margin: 0 0 8px; font: 800 19px/1.3 Manrope, sans-serif; color: var(--heading); }
+.pf-body p { margin: 0; font-size: 14px; line-height: 1.7; color: var(--muted); }
+@media (max-width: 900px) { .pf-grid-3 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .pf-grid, .pf-grid-3 { grid-template-columns: 1fr; gap: 18px; } }
