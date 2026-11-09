@@ -1068,3 +1068,9 @@ h2 em, .hero h1 em { font-style: normal; color: var(--accent); }
   .spec-notice { padding: 22px 20px; }
   .spec-list > div { grid-template-columns: 1fr; gap: 4px; }
 }
+
+/* Logo gambar (Cahaya Mustika Internesia) */
+.brand-logo { display: block; height: calc(var(--header-h) - 10px); width: auto; padding: 3px 6px; border-radius: 8px; background: #fff; }
+.site-footer .brand-logo { height: 96px; }
+:root[data-theme="dark"] main img.brand-logo, :root[data-theme="dark"] img.brand-logo { filter: none; }
+@media (max-width: 640px) { .brand-logo { height: calc(var(--header-h) - 12px); } }
