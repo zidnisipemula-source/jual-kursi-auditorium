@@ -1159,3 +1159,13 @@ h2 em, .hero h1 em { font-style: normal; color: var(--accent); }
 }
 .sec-blue .industry-card { grid-template-rows: auto 1fr; }
 .sec-blue .ind-num { top: auto; bottom: 6px; right: 16px; font-size: 48px; }
+
+/* Logo horizontal tanpa kotak/kartu */
+.brand-logo { height: 46px; width: auto; max-width: 100%; padding: 0; border-radius: 0; background: transparent; }
+.site-footer .brand-logo { height: 54px; }
+:root[data-theme="dark"] .site-header .brand-logo { padding: 5px 12px; border-radius: 10px; background: #fff; height: 48px; }
+@media (max-width: 640px) { .brand-logo { height: 36px; } :root[data-theme="dark"] .site-header .brand-logo { height: 38px; padding: 4px 9px; } }
+.brand-logo { height: 54px; }
+.site-footer .brand-logo { height: 62px; }
+:root[data-theme="dark"] .site-header .brand-logo { height: 56px; }
+@media (max-width: 640px) { .brand-logo { height: 40px; } :root[data-theme="dark"] .site-header .brand-logo { height: 42px; } }
