@@ -1169,3 +1169,35 @@ h2 em, .hero h1 em { font-style: normal; color: var(--accent); }
 .site-footer .brand-logo { height: 62px; }
 :root[data-theme="dark"] .site-header .brand-logo { height: 56px; }
 @media (max-width: 640px) { .brand-logo { height: 40px; } :root[data-theme="dark"] .site-header .brand-logo { height: 42px; } }
+
+
+/* ===== Hero beranda: teks kiri, kartu poin kanan (tanpa foto latar) ===== */
+.hero-home { position: relative; overflow: hidden; padding: clamp(48px, 7vw, 96px) 0 clamp(56px, 8vw, 104px); background: radial-gradient(900px 420px at 88% 8%, var(--accent-soft), transparent 70%), var(--bg); }
+.hero-home-inner { display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(32px, 5vw, 72px); align-items: center; }
+.hero-home .hero-copy { max-width: 600px; }
+.hero-home h1 { margin: 20px 0; color: var(--heading); font: 800 clamp(32px, 4.4vw, 56px)/1.1 Manrope, sans-serif; letter-spacing: -.035em; overflow-wrap: break-word; }
+.hero-home .hero-copy > p { margin: 0; max-width: 540px; color: var(--muted); font-size: clamp(14px, 1.4vw, 16px); line-height: 1.85; }
+.hero-home .hero-actions { margin-top: 30px; }
+.hh-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.hh-card { display: flex; flex-direction: column; gap: 14px; padding: 22px; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--shadow); transition: transform .2s ease, border-color .2s ease; }
+.hh-card:hover { transform: translateY(-3px); border-color: var(--accent); }
+.hh-card h3 { margin: 0 0 6px; color: var(--heading); font: 700 16px/1.35 Manrope, sans-serif; }
+.hh-card p { margin: 0; color: var(--muted); font-size: 13.5px; line-height: 1.65; }
+.hh-card:nth-child(even) { transform: translateY(18px); }
+.hh-card:nth-child(even):hover { transform: translateY(15px); }
+.hh-cards { padding-bottom: 18px; }
+@media (max-width: 900px) {
+  .hero-home-inner { grid-template-columns: 1fr; }
+  .hh-card:nth-child(even), .hh-card:nth-child(even):hover { transform: none; }
+  .hh-cards { padding-bottom: 0; }
+}
+@media (max-width: 640px) {
+  .hh-cards { grid-template-columns: 1fr; gap: 12px; }
+  .hh-card { flex-direction: row; align-items: flex-start; padding: 18px; }
+  .hero-home .hero-actions .btn { flex: 1 1 100%; }
+}
+
+/* Latar foto produk: putih polos */
+.pcard-img, .model-photo { background: #fff; }
+:root[data-theme="dark"] .pcard-img { background: #fff; }
+:root[data-theme="dark"] main .pcard-img img, :root[data-theme="dark"] main .model-photo img { filter: none; }
