@@ -1201,3 +1201,26 @@ h2 em, .hero h1 em { font-style: normal; color: var(--accent); }
 .pcard-img, .model-photo { background: #fff; }
 :root[data-theme="dark"] .pcard-img { background: #fff; }
 :root[data-theme="dark"] main .pcard-img img, :root[data-theme="dark"] main .model-photo img { filter: none; }
+
+
+/* ===== Hero beranda: foto latar + teks kiri, kartu kaca kanan ===== */
+.hero-grid-inner { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(28px, 5vw, 72px); align-items: center; }
+.hero-grid .hero-copy { max-width: 600px; }
+.hero-grid h1 { max-width: 600px; margin: 18px 0; font-size: clamp(28px, 3.6vw, 46px); line-height: 1.14; letter-spacing: -.03em; }
+.hero-grid .hero-copy > p { font-size: clamp(14px, 1.2vw, 15.5px); line-height: 1.8; }
+.hero-grid .hero-overlay { background: linear-gradient(90deg, rgba(7,25,43,.9) 0%, rgba(7,25,43,.7) 48%, rgba(7,25,43,.5) 100%), linear-gradient(0deg, rgba(7,25,43,.28), rgba(7,25,43,.08)); }
+.hg-cards { display: grid; gap: 12px; }
+.hg-card { display: flex; align-items: center; gap: 16px; padding: 16px 20px; color: #fff; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.22); border-radius: 14px; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); transition: background .2s ease, transform .2s ease; }
+.hg-card:hover { background: rgba(255,255,255,.16); transform: translateX(-4px); }
+.hg-icon { display: grid; place-items: center; width: 44px; height: 44px; flex: 0 0 44px; border-radius: 12px; background: rgba(255,255,255,.16); color: #fff; }
+.hg-icon svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.hg-card h3 { margin: 0 0 3px; color: #fff; font: 700 15px/1.3 Manrope, sans-serif; }
+.hg-card p { margin: 0; color: rgba(255,255,255,.8); font-size: 13px; line-height: 1.55; }
+@media (max-width: 900px) {
+  .hero-grid-inner { grid-template-columns: 1fr; }
+  .hg-card:hover { transform: none; }
+}
+@media (max-width: 640px) {
+  .hero-grid .hero-actions .btn { flex: 1 1 100%; }
+  .hg-card { padding: 14px 16px; }
+}
