@@ -1224,3 +1224,81 @@ h2 em, .hero h1 em { font-style: normal; color: var(--accent); }
   .hero-grid .hero-actions .btn { flex: 1 1 100%; }
   .hg-card { padding: 14px 16px; }
 }
+
+
+/* Kartu hero: panel putih langkah pemesanan */
+.hg-panel { padding: clamp(22px, 2.6vw, 32px); background: #fff; border-radius: 20px; box-shadow: 0 24px 60px rgba(4, 16, 30, .35); }
+.hg-kicker { color: var(--accent); font: 800 11px/1 Manrope, sans-serif; letter-spacing: .14em; }
+.hg-panel h2 { margin: 10px 0 20px; color: #10283d; font: 800 clamp(20px, 2vw, 24px)/1.25 Manrope, sans-serif; letter-spacing: -.02em; }
+.hs-list { position: relative; display: grid; gap: 20px; margin: 0; padding: 0; list-style: none; }
+.hs-list::before { content: ""; position: absolute; left: 17px; top: 18px; bottom: 18px; width: 2px; background: #dbe6f0; }
+.hs-list li { position: relative; display: flex; gap: 16px; align-items: flex-start; }
+.hs-num { position: relative; display: grid; place-items: center; width: 36px; height: 36px; flex: 0 0 36px; border-radius: 50%; background: var(--accent); color: #fff; font: 800 14px/1 Manrope, sans-serif; box-shadow: 0 0 0 4px #fff; }
+.hs-list h3 { margin: 0 0 3px; color: #10283d; font: 700 15px/1.35 Manrope, sans-serif; }
+.hs-list p { margin: 0; color: #55677a; font-size: 13.5px; line-height: 1.6; }
+.hg-link { display: inline-flex; gap: 8px; margin-top: 22px; padding-top: 18px; width: 100%; border-top: 1px solid #e3ebf3; color: var(--accent); font: 700 14px/1 Manrope, sans-serif; }
+.hg-link:hover { text-decoration: underline; }
+
+
+/* =====================================================
+   GAYA KARTU BARU (berlaku untuk semua kartu di situs)
+   Putih, sudut 22px, bayangan lembut, garis aksen muncul di bawah saat hover
+===================================================== */
+.pcard, .industry-card, .news-card, .pf-card, .contact-card, .b2b-card,
+.approach-grid article, .benefit-cards article, .spec-list {
+  position: relative;
+  background: #fff;
+  border: 1px solid #e9eff5;
+  border-radius: 22px;
+  box-shadow: 0 1px 2px rgba(16, 40, 61, .04), 0 14px 34px -14px rgba(16, 40, 61, .18);
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+}
+.pcard:hover, .industry-card:hover, .news-card:hover, .pf-card:hover, .contact-card:hover,
+.b2b-card:hover, .approach-grid article:hover, .benefit-cards article:hover {
+  transform: translateY(-6px);
+  border-color: #dbe7f1;
+  box-shadow: 0 2px 4px rgba(16, 40, 61, .05), 0 26px 46px -16px rgba(16, 40, 61, .28);
+}
+/* garis aksen bawah */
+.pcard::after, .industry-card::after, .news-card::after, .pf-card::after, .contact-card::after,
+.b2b-card::after, .approach-grid article::after, .benefit-cards article::after {
+  content: ""; position: absolute; left: 26px; right: 26px; bottom: -1px; z-index: 2;
+  height: 4px; border-radius: 4px 4px 0 0; pointer-events: none;
+  background: linear-gradient(90deg, var(--accent), var(--gold));
+  transform: scaleX(0); transform-origin: left; transition: transform .35s ease;
+}
+.pcard:hover::after, .industry-card:hover::after, .news-card:hover::after, .pf-card:hover::after,
+.contact-card:hover::after, .b2b-card:hover::after, .approach-grid article:hover::after,
+.benefit-cards article:hover::after { transform: scaleX(1); }
+
+/* hapus aksen lama (garis atas / kiri) */
+.b2b-card { border-top: 1px solid #e9eff5; }
+.approach-grid article { border-top: 1px solid #e9eff5; border-radius: 22px; padding: 28px 26px; }
+.benefit-cards article { border-top: 1px solid #e9eff5; overflow: visible; }
+.benefit-cards article::after { display: block; }
+.benefit-cards article:hover { background: #fff; }
+
+/* kartu produk: foto di dalam bingkai membulat */
+.pcard-img { margin: 12px 12px 0; border-radius: 16px; background: #fff; }
+.pcard-body { padding: 16px 22px 22px; }
+.pcard-actions { border-top: 1px dashed #d9e3ec; }
+
+/* kartu portofolio: foto di dalam bingkai membulat */
+.pf-img { margin: 12px 12px 0; border-radius: 16px; }
+.pf-body { padding: 18px 22px 26px; }
+
+/* kartu artikel */
+.news-grid > .news-card:first-child { border: 0; border-radius: 22px; }
+.news-grid > .news-card:first-child::after { display: none; }
+
+/* nomor langkah & ikon dengan bentuk baru */
+.ap-num { display: grid; place-items: center; width: 46px; height: 46px; margin-bottom: 18px; border-radius: 14px; background: var(--accent-soft); color: var(--accent); font-size: 18px; opacity: 1; }
+.b2b-icon, .industry-card .b2b-icon { border-radius: 14px; }
+
+/* tabel spesifikasi di halaman detail */
+.spec-list { padding: 10px 28px; }
+
+@media (max-width: 640px) {
+  .pcard:hover, .industry-card:hover, .news-card:hover, .pf-card:hover, .contact-card:hover,
+  .b2b-card:hover, .approach-grid article:hover, .benefit-cards article:hover { transform: none; }
+}

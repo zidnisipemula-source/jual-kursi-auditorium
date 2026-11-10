@@ -10,19 +10,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <script>
-    /* Terapkan tema tersimpan sebelum halaman tampil agar tidak berkedip */
-    (function () {
-      var t = null;
-      try { t = localStorage.getItem("theme"); } catch (e) {}
-      if (t !== "light" && t !== "dark") {
-        t = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-      }
-      document.documentElement.setAttribute("data-theme", t);
-      var m = document.querySelector('meta[name="theme-color"]');
-      if (m) m.setAttribute("content", t === "dark" ? "#0b1722" : "#ffffff");
-    })();
-  </script>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -40,10 +27,6 @@
         <a class="btn btn-primary nav-cta-mobile" href="kontak.html">Minta Penawaran</a>
       </nav>
       <div class="header-actions">
-        <button class="theme-toggle" type="button" aria-label="Beralih ke mode malam" aria-pressed="false" title="Ganti tema">
-          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
-          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.3M12 19.2v2.3M2.5 12h2.3M19.2 12h2.3M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
-        </button>
         <a class="btn btn-primary nav-cta" href="kontak.html">Minta Penawaran <span>↗</span></a>
         <button class="menu-toggle" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="primary-navigation">☰</button>
       </div>
