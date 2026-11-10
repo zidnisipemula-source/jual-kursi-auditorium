@@ -1302,3 +1302,23 @@ h2 em, .hero h1 em { font-style: normal; color: var(--accent); }
   .pcard:hover, .industry-card:hover, .news-card:hover, .pf-card:hover, .contact-card:hover,
   .b2b-card:hover, .approach-grid article:hover, .benefit-cards article:hover { transform: none; }
 }
+
+/* Hero: teks saja di atas foto */
+.hero-grid-inner { grid-template-columns: minmax(0, 640px); }
+
+/* 6 Hal Penting: foto + daftar */
+.pick-split { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(28px, 4.5vw, 64px); align-items: center; margin-top: 8px; }
+.pick-photo { position: sticky; top: 100px; margin: 0; overflow: hidden; border-radius: 24px; box-shadow: 0 24px 50px -20px rgba(16, 40, 61, .35); }
+.pick-photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
+.pick-list { display: grid; margin: 0; padding: 0; list-style: none; }
+.pick-list li { display: flex; gap: 20px; align-items: flex-start; padding: 20px 0; border-bottom: 1px solid #dbe5ee; }
+.pick-list li:first-child { padding-top: 0; }
+.pick-list li:last-child { padding-bottom: 0; border-bottom: 0; }
+.pl-num { flex: 0 0 auto; min-width: 44px; color: var(--accent); font: 800 26px/1.1 Manrope, sans-serif; letter-spacing: -.02em; }
+.pick-list h3 { margin: 0 0 4px; color: #10283d; font: 700 17px/1.35 Manrope, sans-serif; }
+.pick-list p { margin: 0; color: #55677a; font-size: 14.5px; line-height: 1.7; }
+@media (max-width: 860px) {
+  .pick-split { grid-template-columns: 1fr; }
+  .pick-photo { position: static; }
+  .pick-photo img { aspect-ratio: 16 / 10; }
+}
