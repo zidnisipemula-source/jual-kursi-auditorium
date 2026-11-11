@@ -1337,3 +1337,78 @@ h2 em, .hero h1 em { font-style: normal; color: var(--accent); }
 .pv-card > p { grid-column: 2; margin: 0; color: #55677a; font-size: 14.5px; line-height: 1.65; }
 .pv-card header { display: contents; }
 @media (max-width: 860px) { .pv-split { grid-template-columns: 1fr; gap: 28px; } .pv-intro { position: static; } }
+
+/* Hero halaman Produk: foto latar */
+.page-hero-photo { position: relative; overflow: hidden; padding: clamp(56px, 8vw, 104px) 0 clamp(48px, 7vw, 88px); }
+.page-hero-bg { position: absolute; inset: 0; }
+.page-hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 55%; }
+.page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(7,25,43,.92) 0%, rgba(7,25,43,.75) 50%, rgba(7,25,43,.45) 100%); }
+.page-hero-content { position: relative; z-index: 1; }
+
+/* Kartu ajakan di akhir katalog */
+.pcard.pcard-help { display: flex; flex-direction: column; justify-content: center; gap: 18px; padding: 28px; background: linear-gradient(135deg, #123b60, #1b78b7); border: 0; color: #fff; }
+.pcard-help .help-icon { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 14px; background: rgba(255,255,255,.16); }
+.pcard-help .help-icon svg { width: 24px; height: 24px; fill: none; stroke: #fff; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.pcard-help h3 { margin: 0 0 8px; color: #fff; font: 800 clamp(20px, 2vw, 26px)/1.25 Manrope, sans-serif; letter-spacing: -.02em; }
+.pcard-help p { margin: 0; max-width: 520px; color: #d6e6f2; font-size: 14.5px; line-height: 1.7; }
+.pcard-help .btn { align-self: flex-start; }
+.pcard-help::after { display: none; }
+.pgrid:not(.home) > .pcard.pcard-help { flex: 0 0 calc(3 * (100% - 60px) / 4 + 40px); }
+@media (max-width: 1100px) { .pgrid:not(.home) > .pcard.pcard-help { flex-basis: calc(2 * (100% - 40px) / 3 + 20px); } }
+@media (max-width: 900px) { .pgrid:not(.home) > .pcard.pcard-help { flex-basis: 100%; } }
+@media (max-width: 480px) { .pgrid:not(.home) > .pcard.pcard-help { flex-basis: 100%; padding: 22px; } }
+
+/* Halaman isi artikel & detail portofolio */
+.article-wrap { max-width: 860px; }
+.article-cover { margin: 0 0 36px; border-radius: 18px; overflow: hidden; background: var(--bg-alt); aspect-ratio: 16 / 9; }
+.article-cover img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.prose { color: var(--text); font-size: 16px; line-height: 1.85; }
+.prose .prose-lead { margin: 0 0 28px; color: var(--heading); font: 600 clamp(17px, 2vw, 20px)/1.7 Manrope, sans-serif; }
+.prose h2 { margin: 38px 0 12px; color: var(--heading); font: 800 clamp(20px, 2.4vw, 25px)/1.3 Manrope, sans-serif; letter-spacing: -.02em; }
+.prose p { margin: 0 0 16px; }
+.prose ul { margin: 0 0 18px; padding-left: 22px; }
+.prose li { margin-bottom: 8px; }
+.prose strong { color: var(--heading); }
+.prose .spec-list { margin: 8px 0 24px; }
+.prose-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
+.prose-cta.center { justify-content: center; margin-top: 32px; }
+.pf-img.pf-link { display: block; }
+.pf-body h3 a:hover { color: var(--accent); }
+.pf-body .news-more { margin-top: 14px; }
+.related-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; }
+.related-grid > .news-card, .related-grid > .news-card:first-child { grid-row: auto; min-height: 0; flex-direction: column; border: 1px solid var(--border); color: inherit; background: var(--surface); }
+.related-grid > .news-card:first-child .news-img, .related-grid > .news-card:not(:first-child) .news-img { position: relative; inset: auto; flex: none; aspect-ratio: 16 / 10; }
+.related-grid > .news-card:first-child .news-img::after { display: none; }
+.related-grid > .news-card:first-child .news-body, .related-grid > .news-card:not(:first-child) .news-body { position: static; padding: 20px 22px 22px; margin-top: 0; }
+.related-grid > .news-card:first-child small { padding: 0; background: none; color: var(--accent); }
+.related-grid > .news-card:first-child h3 { font-size: 16px; }
+.related-grid > .news-card:first-child h3 a, .related-grid > .news-card:first-child .news-more { color: var(--accent); }
+.related-grid > .news-card:first-child h3 a { color: var(--heading); }
+.related-grid > .news-card:first-child p { color: var(--muted); }
+.related-grid > .news-card:not(:first-child) p { display: block; -webkit-line-clamp: unset; overflow: visible; }
+@media (max-width: 640px) { .related-grid { grid-template-columns: 1fr; } .prose { font-size: 15.5px; } }
+
+/* Galeri proyek portofolio */
+.pf-gallery-wrap { margin-top: 40px; }
+.pf-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.pf-gallery a { display: block; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 14px; background: var(--bg-alt); }
+.pf-gallery img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.pf-gallery a:hover img { transform: scale(1.04); }
+.pf-grid-one { grid-template-columns: minmax(0, 520px); justify-content: center; }
+@media (max-width: 900px) { .pf-gallery { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .pf-gallery { grid-template-columns: 1fr; } }
+
+/* Hero halaman: teks di tengah */
+.page-hero-center { text-align: center; }
+.page-hero-center .breadcrumb { justify-content: center; }
+.page-hero-center h1 { margin-left: auto; margin-right: auto; max-width: 860px; }
+.page-hero-center p { margin-left: auto; margin-right: auto; }
+.page-hero-photo.page-hero-center .page-hero-overlay { background: linear-gradient(180deg, rgba(7,25,43,.78), rgba(7,25,43,.7)); }
+
+/* Baris "Juga cocok untuk" */
+.place-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; margin-top: 32px; padding-top: 26px; border-top: 1px solid #dbe5ee; }
+.place-label { color: #55677a; font: 700 12px/1 Manrope, sans-serif; letter-spacing: .1em; text-transform: uppercase; }
+.place-chips { display: flex; flex-wrap: wrap; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.place-chips li { padding: 8px 16px; background: #fff; border: 1px solid #dbe5ee; border-radius: 999px; color: #10283d; font: 600 13.5px/1 Poppins, sans-serif; }
+.place-row .text-link { margin-left: auto; }
+@media (max-width: 640px) { .place-row .text-link { margin-left: 0; } }
